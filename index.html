@@ -1,4 +1,4 @@
-<!-- 11/07/2026 18:25 -->
+<!-- 12/07/2026 11:05 -->
 <!-- https://github.com/PacoDiezSa/calculadora-balistica -->
 <!doctype html>
 <html lang="es">
@@ -1409,7 +1409,7 @@ function obtenerDatosSimulador(distancia) {
     </footer>
 
     <script>
-const APP_VERSION = "1.0";
+const APP_VERSION = "1.1";
       document.getElementById("versionApp").textContent =
         "Versión " + APP_VERSION;
     </script>
@@ -2132,24 +2132,25 @@ function calibrarTiempoReaccion() {
             document.getElementById("rMedia").textContent =
                 media.toFixed(0) + " ms";
 
-            if (numeroPrueba >= 10) {
-              // Guardar el resultado
-              retardoPersonalDisparo = media;
-              if (window.opener) {
-                  window.opener.retardoPersonalDisparo = retardoPersonalDisparo;
-                  localStorage.setItem(
-                      "retardoPersonalDisparo",
-                      retardoPersonalDisparo
-                  );
-              }
-              modoReaccion = false;
-              esperandoDisparo = false;
+if (numeroPrueba >= 10) {
 
-              document.getElementById("rEstado").textContent =
-                  "✔ CALIBRACIÓN FINALIZADA";
-            }
+  retardoPersonalDisparo = media;
 
-            } else {
+  localStorage.setItem(
+      "retardoPersonalDisparo",
+      retardoPersonalDisparo
+  );
+
+  if (window.opener) {
+      window.opener.retardoPersonalDisparo = retardoPersonalDisparo;
+  }
+
+  modoReaccion = false;
+  esperandoDisparo = false;
+
+  document.getElementById("rEstado").textContent =
+      "✔ CALIBRACIÓN FINALIZADA";
+}            } else {
                 console.log("Disparo anticipado o inválido");
             }
 
