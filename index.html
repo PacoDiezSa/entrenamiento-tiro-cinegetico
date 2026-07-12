@@ -1433,7 +1433,7 @@ const APP_VERSION = "1.1";
         parseFloat(document.getElementById("distanciaEntrenamiento").value);
 
         const datosBalisticos =   obtenerDatosSimulador(distanciaEntrenamiento);
-
+        console.log("[1] DATOS BALÍSTICOS", datosBalisticos);
 
 // Configuración elegida por el usuario
         window.configuracionEntrenamiento = {
@@ -1789,6 +1789,8 @@ text-align: left;
     const tiempoVuelo = ${datosBalisticos.tiempoVuelo};
     const caidaCm = ${datosBalisticos.caidaCm};
     const adelantoCm = ${datosBalisticos.adelantoTotalCm};
+
+    console.log("[2] ADELANTO RECIBIDO =", adelantoCm);
 
     const configuracion = window.opener.configuracionEntrenamiento;
     
@@ -2164,6 +2166,13 @@ if (numeroPrueba >= 10) {
         disparos++;
         actualizarPanel();
         estadoImpacto = null; // reset
+
+      console.log("[3] DISPARO", {
+        adelantoCm,
+        balaX: crossX - adelantoCm,
+        retardo: window.retardoPersonalDisparo
+      });
+
 
         balaX = crossX - adelantoCm;
         balaY = crossY - caidaCm;
