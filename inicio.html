@@ -1,99 +1,97 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
+        <title>Entrenamiento de Tiro Cinegético</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                margin: 0;
+                background: #111;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                font-family: Arial, sans-serif;
+            }
 
-<title>Entrenamiento de Tiro Cinegético</title>
+            #contenedor {
+                position: relative;
+                max-width: 900px;
+                width: 95%;
+            }
 
-<style>
+            #contenedor img {
+                width: 100%;
+                display: block;
+                border-radius: 12px;
+            }
 
-body{
-    margin:0;
-    background:#111;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    min-height:100vh;
-    font-family:Arial,sans-serif;
-}
+            #btnComenzar {
+                position: absolute;
 
-#contenedor{
-    position:relative;
-    max-width:900px;
-    width:95%;
-}
+                left: 50%;
+                bottom: 80px;
 
-#contenedor img{
-    width:100%;
-    display:block;
-    border-radius:12px;
-}
+                transform: translateX(-50%);
 
-#btnComenzar{
+                background: #ff6a00;
+                color: white;
 
-    position:absolute;
+                border: none;
 
-    left:50%;
-    bottom:80px;
+                border-radius: 12px;
 
-    transform:translateX(-50%);
+                padding: 15px 36px;
 
-    background:#ff6a00;
-    color:white;
+                font-size: 24px;
 
-    border:none;
+                font-weight: bold;
 
-    border-radius:12px;
+                cursor: pointer;
 
-    padding:15px 36px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+            }
 
-    font-size:24px;
+            #btnComenzar:hover {
+                transform: translateX(-50%) scale(1.03);
+            }
 
-    font-weight:bold;
+            /* ============================= */
+            /* AJUSTE PARA MÓVILES           */
+            /* ============================= */
 
-    cursor:pointer;
+            @media (max-width: 700px) {
+                #btnComenzar {
+                    left: 65%;
+                    bottom: 55px;
 
-    box-shadow:0 5px 15px rgba(0,0,0,.35);
+                    padding: 8px 18px;
 
-}
+                    font-size: 15px;
 
-#btnComenzar:hover{
+                    border-radius: 10px;
+                }
+            }
+            #btnComenzar:hover {
+                transform: translateX(-50%) scale(1.03);
+            }
+        </style>
+    </head>
 
-    transform:translateX(-50%) scale(1.03);
+    <body>
+        <div id="contenedor">
+            <img src="Portada.png" />
 
-}
+            <button id="btnComenzar">Comenzar entrenamiento</button>
+        </div>
 
-</style>
-
-</head>
-
-<body>
-
-<div id="contenedor">
-
-<img src="Portada.png">
-
-<button id="btnComenzar">
-
-Comenzar entrenamiento
-
-</button>
-
-</div>
-
-<script>
-
-document.getElementById("btnComenzar").onclick=function(){
-
-    window.location="index.html";
-
-};
-
-</script>
-
-</body>
-
+        <script>
+            document.getElementById('btnComenzar').onclick = function () {
+                window.location = 'index.html';
+            };
+        </script>
+    </body>
 </html>
