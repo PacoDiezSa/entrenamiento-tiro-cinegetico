@@ -17,15 +17,15 @@
         padding: 20px;
       }
 
-      .container {
-        max-width: 1000px;
-        margin: auto;
-        background: white;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 15px;
 
+    background: transparent;
+    box-shadow: none;
+    border-radius: 0;
+}
       input {
         width: 100%;
         padding: 8px;
@@ -286,8 +286,7 @@
 
   <body>
     <div class="container">
-      <div style="text-align:center; margin:20px 0;">
-
+      <div style="text-align:center; margin:5px 0;">
       <button
         id="btnConfiguracion"
         class="btn-secundario"
@@ -295,6 +294,14 @@
 
         ⚙ Mostrar configuración balística
       </button>
+
+<button
+    class="btn-secundario"
+    onclick="window.open('Manual_de_uso.pdf','_blank')">
+    📘 Manual
+</button>
+
+
     </div>
 
 
@@ -413,7 +420,7 @@
       </div>
       </div>
         
-      <div style="text-align:center; margin:20px 0;">
+      <div style="text-align:center; margin:10px 0;">
 
         <label for="distanciaEntrenamiento"
                style="font-weight:bold; margin-right:8px;">
@@ -434,13 +441,14 @@
                 padding:4px;
             "> m
     
-        <br><br>
+        <br>
     
         <div id="resumenSimulacion"
         style="
-        width:500px;
+max-width:500px;
+width:95%;
         margin:0 auto;
-        padding:10px 1px;
+        padding:6px 1px;
         background:#eef5fb;
         border:1px solid #c9d8e6;
         border-radius:10px;
@@ -454,7 +462,7 @@
         <div style="
         font-size:15px;
         font-weight:bold;
-        margin-bottom:8px;
+        margin-bottom:4px;
         color:#2c3e50;
         ">
         📌 Resumen de la simulación
@@ -504,13 +512,6 @@
 
         </table>
 
-        <div style="
-        margin-top:8px;
-        padding-top:6px;
-        border-top:1px solid #cfd8e3;
-        text-align:center;
-    ">
-      </div>
 
         </div>   
         
@@ -518,7 +519,7 @@
   </div>
 
 
-  <div style="text-align:center; margin:12px 0 20px 0;">
+  <div style="text-align:center; margin:6px 0 10px 0;">
 
     <input
         type="checkbox"
@@ -539,8 +540,8 @@
     
 
 
-    <div style="text-align:center; margin:20px 0;">
-      <button
+<div style="text-align:center; margin:8px 0;">
+        <button
           id="btnTabla"
           class="btn-secundario"
           onclick="toggleTabla()">
@@ -552,7 +553,9 @@
 
     <script>
 
-
+  function abrirManual() {
+      window.open("Manual_de_uso.pdf", "_blank");
+  }
 
       function densidadAire(alt) {
         const rho0 = 1.225;
